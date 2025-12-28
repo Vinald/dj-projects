@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | articles</title>
+</head>
+<body>
+    <h1>Home for articles</h1>
+    <h2>
+        Welcome to the articles home page!
+    </h2>
+<ul>
+    {% for article in articles %}
+        <li>
+            {{ article.title }} - {{ article.content }}
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
