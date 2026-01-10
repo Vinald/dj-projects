@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <div class="container">
+        <h1>Flight List</h1>
+        {% if flights %}
+            {% for flight in flights %}
+                <div class="col mb-4">
+                   <a href="{% url 'flight_details' flight.id %}" style="text-decoration: none; color: inherit;">
+                        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Flight {{ flight.flight_number }}</h5>
+                            <p class="card-text">
+                                Origin: {{ flight.departure }}<br>
+                                Destination: {{ flight.arrival }}<br>
+                                Departure Time: {{ flight.departure_time }}<br>
+                                Arrival Time: {{ flight.arrival_time }}
+                            </p>
+                        </div>
+                    </div>
+                   </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No flights available.</p>
+        {% endif %}
+   </div>
+{% endblock %}

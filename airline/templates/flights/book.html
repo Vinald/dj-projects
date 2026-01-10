@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <div class="container">
+       <h1>Book Flight</h1>
+         <form method="post">
+              {% csrf_token %}
+              <div class="form-group
+">
+                  <label for="passenger">Select Passenger:</label>
+                  <select class="form-control" id="passenger" name="passenger_id" required>
+                      {% for passenger in passengers %}
+                          <option value="{{ passenger.id }}">{{ passenger.first_name }} {{ passenger.last_name }}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+            <button type="submit" class="btn btn-primary mt-3">Book Flight</button>
+
+         </form>
+   </div>
+{% endblock %}
