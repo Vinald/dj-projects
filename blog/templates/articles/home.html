@@ -1,0 +1,16 @@
+{% extends "articles/article_base.html" %}
+{% block title %}Articles{% endblock %}
+{% block content %}
+     <h1>Home for articles</h1>
+    <h2>
+        Welcome to the articles home page!
+    </h2>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <a href="{% url 'article_detail' article.id %}">{{ article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -7,11 +7,6 @@ __pycache__/
 
 # Virtual environment directories
 .venv/
-venv/
-ENV/
-env/
-env.bak/
-venv.bak/
 .allenv/
 allenv/
 
@@ -47,6 +42,8 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 # Editor and IDE files
 .vscode/
 .idea/
+.idea/*.iml
+.idea/*.xml
 *.suo
 *.ntvs*
 *.njsproj
