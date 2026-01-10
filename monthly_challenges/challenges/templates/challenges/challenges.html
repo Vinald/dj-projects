@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+<!-- title -->
+{% block title %}Challenges{% endblock %}
+<!-- start of the content -->
+{% block content %}
+
+<div class="container">
+    <h1>Challenges</h1>
+    <ul>
+        {% for month in months %}
+        <li>
+            <a href="{% url 'challenge' month %}">{{ month }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

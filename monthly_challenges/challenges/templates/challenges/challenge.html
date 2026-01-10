@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+<!-- title -->
+{% block title %}Challenge{% endblock %}
+<!-- start of the content -->
+{% block content %}
+<div class="container">
+    <h1>{{ month }}</h1>
+    <h3>---{{ text }}</h3>
+    <a href="{% url 'challenges' %}">Challenges</a>
+</div>
+{% endblock %}
