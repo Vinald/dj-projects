@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        {% if title %}
+        <title>Hello | {{ title }}</title>
+        {% else %}
+        <title>Hello</title>
+        {% endif %}
+<!--        bootstrap css link-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+<!--        custom css styles link -->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+            <a class="navbar-brand" href="{% url 'hello_world' %}">MySite</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'greet' 'Samuel' %}">Greet</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'hello_world' %}">HelloWorld</a>
+                </li>
+
+                  <li class="nav-item">
+                  <a class="nav-link" href="{% url 'challenges' %}">Challenges</a>
+                </li>
+
+                <li class="nav-item">
+                    <li><a class="nav-link" href="{% url 'tasks:tasks' %}">All Tasks</a></li>
+                </li>
+
+                  <li class="nav-item">
+                  <a class="nav-link" href="{% url 'tasks:add_task' %}">Add Task</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

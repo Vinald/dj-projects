@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Add Task</h1>
+
+    <!--    <form method="POST" action="{% url 'tasks:add_task' %}">-->
+    <!--        {% csrf_token %}-->
+    <!--        <div class="mb-3">-->
+    <!--            <label for="title" class="form-label">Title</label>-->
+    <!--            <input type="text" class="form-control" name="title" id="title" placeholder="Enter a title" required>-->
+
+    <!--            <label for="description" class="form-label">Description</label>-->
+    <!--            <input type="text" class="form-control" name="description" id="description"-->
+    <!--                   placeholder="Enter a description" required>-->
+
+    <!--            <input type="submit" class="btn btn-primary" value="Add Task">-->
+    <!--        </div>-->
+    <!--    </form>-->
+
+    <!--    =============================== OR ================================ -->
+    <form method="POST" action="{% url 'tasks:add_task' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Add Task">
+    </form>
+</div>
+{% endblock %}
